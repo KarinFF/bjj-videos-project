@@ -62,10 +62,11 @@ class NewSuggestion extends React.Component {
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
+          ariaHideApp={false}
           style={customStyles} >
           <div className="modal">
             <div className="videoWrapper">
-              <iframe width="560" height="349" src={"http://www.youtube.com/embed/" + this.props.link + "?autoplay=0"} frameborder="0" allowfullscreen></iframe>
+              <iframe title="BJJ video" width="560" height="349" src={"http://www.youtube.com/embed/" + this.props.link + "?autoplay=1"} frameBorder="0" allowFullScreen></iframe>
             </div>
           </div>
         </Modal>
@@ -73,7 +74,6 @@ class NewSuggestion extends React.Component {
           <img src={"https://img.youtube.com/vi/" + this.props.link + "/0.jpg"} alt="screenshot of video" />
           <div className="info">
             <h4>{this.props.title}</h4>
-            <p className="cat">{this.props.category}</p>
             <p>{this.props.description}</p>
             <p className="tags">Tags: {this.props.tags}</p>
           </div>
@@ -85,5 +85,6 @@ class NewSuggestion extends React.Component {
     )
   }
 }
+
 
 export default NewSuggestion

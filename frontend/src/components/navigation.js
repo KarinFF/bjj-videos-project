@@ -13,10 +13,12 @@ class Navigation extends React.Component {
             <Link to="/">
                 Home
             </Link>
-            {uniqueCategories.map(listing => (
-              <div>
-                <ul>
-                  <li><Link to={`/category/${listing}`}>{listing}</Link></li>
+            {uniqueCategories.map((listing) => (
+              <div className="cats">
+                <ul key={listing._id}>
+                  <li>
+                    <Link to={`/category/${listing}`}>{listing}</Link>
+                  </li>
                 </ul>
               </div>
             ))}
@@ -29,6 +31,9 @@ class Navigation extends React.Component {
         </ul>
         <Link to="/suggest" className="btnstyle">
             Suggest video
+        </Link>
+        <Link to="/admin" className="btnstyle">
+            Admin Login
         </Link>
       </div>
 

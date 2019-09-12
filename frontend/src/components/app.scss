@@ -104,7 +104,7 @@ body {
 }
 
 .video {
-  margin: 5px 5px 20px;
+  margin: 20px 20px 30px 0px;
   text-align: center;
 
   a {
@@ -160,7 +160,13 @@ h4 {
   flex: 1 0 auto;
   flex-direction: column;
   align-items: center;
+}
 
+.form-info {
+
+    p {
+      max-width: 500px;
+    }
 }
 
 
@@ -185,7 +191,8 @@ h4 {
   border-radius: 5px;
   border:0;
   outline:0;
-  padding:15px;
+  padding:15px 0 15px 0;
+  margin: 5px 0 5px 0;
   text-align: center;
   -webkit-box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.25);
@@ -199,7 +206,7 @@ h4 {
 
 .userform {
   text-align: left;
-  min-width:300px;
+  min-width:400px;
 
   input[type="text"],
   input[type="email"] {
@@ -272,7 +279,16 @@ h4 {
       color:#fff;
     }
   }
-
+  .category .video {
+      max-height: 100%;
+      width:100%;
+      height: 50%;
+      flex-grow: row wrap;
+    .heading {
+      width:100%;
+      flex-shrink: 0;
+    }
+  }
 }
 
 @media (min-width: 701px) {
@@ -297,14 +313,12 @@ h4 {
       width:calc(100% - 200px);
 
       display: flex;
-      justify-content:space-around;
       flex-wrap: wrap;
       flex: 1 0 auto;
     }
 
     .admincontent {
       width:calc(100% - 200px);
-
       display: flex;
       justify-content:space-around;
       flex-wrap: wrap;
@@ -312,8 +326,11 @@ h4 {
     }
 
     .video {
-      display: flex;
-      flex: 1 1 30%;
+      max-width: 500px;
+
+      img {
+        width: 100%;
+      }
     }
   }
 }

@@ -7,8 +7,8 @@ class Header extends React.Component {
     return (
       <header className="header">
         <Link to="/">
-          <h1>BJJ.VIDEOS</h1>
-          <p>Hello and welcome to my BJJ video site. It is number one.</p>
+          <h1>BJJ VIDEOS</h1>
+          <p>Welcome to this library for videos, where you can watch videos or add more!</p>
         </Link>
       </header>
     )

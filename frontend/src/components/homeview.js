@@ -1,7 +1,7 @@
 import React from "react"
 import NewSuggestion from "./newsuggestion"
 
-class HomeView extends React.Component {
+export default class HomeView extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -28,7 +28,7 @@ class HomeView extends React.Component {
       <div className="content">
         {this.state.suggestList.map(suggestion => (
           <NewSuggestion
-            id={suggestion._id}
+            key={suggestion._id}
             title={suggestion.title}
             category={suggestion.category}
             tags={suggestion.tags}
@@ -41,5 +41,3 @@ class HomeView extends React.Component {
   }
 
 }
-
-export default HomeView

@@ -20,7 +20,6 @@ mongoose.connection.once("open", () => console.log("Connected to mongodb"))
 
 const Admin = mongoose.model("Admin", {
   username: { type: String, required: true },
-  email: { type: String, required: true },
   password: { type: String, required: true }
 })
 
@@ -31,6 +30,13 @@ const Suggestion = mongoose.model("Suggestion", {
   link: { type: String, required: true },
   description: { type: String, required: true },
   date: { type: Date, default: () => { Date.now() } }
+})
+
+const Userform = mongoose.model("Userform", {
+  subject: { type: String, required: true },
+  message: { type: String, required: true },
+  name: { type: String, required: true },
+  email: { type: String, required: true }
 })
 
 app.get("/suggestion", (req, res) => {
@@ -51,7 +57,7 @@ app.post("/admin", (req, res) => {
 
 app.post("/suggestion", (req, res) => {
   const {
-    title, category, tags, link, description,
+    title, category, tags, link, description
   } = req.body
   const suggestion = new Suggestion({
     title, category, tags, link, description
@@ -71,6 +77,19 @@ app.delete("/suggestion", (req, res) => {
       res.status(200)
     }
   })
+})
+
+app.post("/userform", (req, res) => {
+  const {
+    subject, message, name, email
+  } = req.body
+  const userform = new Userform({
+    subject, message, name, email
+  })
+
+  userform.save()
+    .then(() => { res.status(201).json({ created: true }) })
+    .catch(err => { res.status(400).send(err.message) })
 })
 
 app.listen(8080, () => console.log("BJJ site listening on port 8080"))

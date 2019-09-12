@@ -1,6 +1,8 @@
-import React from "react"
+import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
 
-class Adminlogin extends React.Component {
+
+class Adminlogin extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,22 +13,12 @@ class Adminlogin extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    fetch("http://localhost:8080/admin", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, textplain, */*",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(this.state)
-    }).then(response => {
-      if (response.status === 201) {
-        this.setState({
-          username: "",
-          password: ""
-        })
+      fetch("http://localhost:8080/admin").then(response => {
+        if (response.status === 201) {
+          this.setState({
+            username: "",
+            password: "" })
       }
-    }).catch(err => {
-      console.log("WRONG!", err)
     })
   }
 
@@ -63,6 +55,8 @@ class Adminlogin extends React.Component {
             </label>
             <button>Log in</button>
           </form>
+          <p>Not an admin?</p>
+          <button><Link to="/signup">Signup here!</Link></button>
         </div>
       </div>
     )

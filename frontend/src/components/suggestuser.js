@@ -69,6 +69,8 @@ export default class SuggestUser extends React.Component {
       <div className="formbox">
         <form onSubmit={this.handleSuggestSubmit} className="userform">
           <h2>Suggest video</h2>
+          <h3>How to add a video to our library:</h3>
+          <p>Either you copy and paste everything from the youtube video you want to add. Or you can add anything you want, except the youtube id, that will fetch the video</p>
           <label>
             <p>Title</p>
             <input
@@ -91,7 +93,7 @@ export default class SuggestUser extends React.Component {
               onChange={this.handleTags} />
           </label>
           <label>
-            <p>Add the Youtube ID here</p>
+            <p>Add the youtube ID here</p>
             <input
               type="text"
               value={this.state.link}
@@ -99,10 +101,12 @@ export default class SuggestUser extends React.Component {
           </label>
           <label>
             <p>Description</p>
-            <input
-              type="text"
+            <textarea
+               rows="10" cols="200"
               value={this.state.description}
-              onChange={this.handleDescription} />
+            onChange={this.handleDescription}>
+
+            </textarea>
           </label>
           <div>
             <button className="btnstyle">Save</button>

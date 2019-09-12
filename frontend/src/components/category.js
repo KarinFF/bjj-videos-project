@@ -16,8 +16,9 @@ class Category extends React.Component {
         <div className="category">
           {filteredCategories.map(listing => (
             <NewSuggestion
-              id={listing._id}
+              key={listing._id}
               title={listing.title}
+              category={listing.category}
               tags={listing.tags}
               link={listing.link}
               description={listing.description} />

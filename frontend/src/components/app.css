@@ -74,7 +74,7 @@ body {
   text-align: center; }
 
 .video {
-  margin: 5px 5px 20px;
+  margin: 20px 20px 30px 0px;
   text-align: center; }
   .video a {
     display: block;
@@ -114,6 +114,9 @@ body {
   flex-direction: column;
   align-items: center; }
 
+.form-info p {
+  max-width: 500px; }
+
 .modal {
   position: relative;
   padding-bottom: 56.25%;
@@ -134,7 +137,8 @@ body {
   border-radius: 5px;
   border: 0;
   outline: 0;
-  padding: 15px;
+  padding: 15px 0 15px 0;
+  margin: 5px 0 5px 0;
   text-align: center;
   -webkit-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.25); }
@@ -144,7 +148,7 @@ body {
 
 .userform {
   text-align: left;
-  min-width: 300px; }
+  min-width: 400px; }
   .userform input[type="text"],
   .userform input[type="email"] {
     padding: 5px;
@@ -193,7 +197,15 @@ body {
     .userform .btnstyle {
       width: 100%;
       background-color: #493484;
-      color: #fff; } }
+      color: #fff; }
+  .category .video {
+    max-height: 100%;
+    width: 100%;
+    height: 50%;
+    flex-grow: row wrap; }
+    .category .video .heading {
+      width: 100%;
+      flex-shrink: 0; } }
 
 @media (min-width: 701px) {
   .wrapper .nav {
@@ -208,7 +220,6 @@ body {
   .wrapper .content {
     width: calc(100% - 200px);
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     flex: 1 0 auto; }
   .wrapper .admincontent {
@@ -218,5 +229,6 @@ body {
     flex-wrap: wrap;
     flex: 1 0 auto; }
   .wrapper .video {
-    display: flex;
-    flex: 1 1 30%; } }
+    max-width: 500px; }
+    .wrapper .video img {
+      width: 100%; } }

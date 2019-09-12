@@ -5,7 +5,9 @@ import Navigation from "./navigation"
 import HomeView from "./homeview"
 import About from "./about"
 import SuggestUser from "./suggestuser"
-import AdminView from "./adminview"
+// import AdminView from "./adminview"
+import Signup from "./signup"
+import AdminLogin from "./admin-login"
 import Category from "./category"
 import NewSuggestion from "./newsuggestion"
 import "./app.css"
@@ -34,14 +36,15 @@ class App extends React.Component {
           <Header />
           <div className="wrapper">
             <Route exact path="/" component={HomeView} />
-            <Route path="/admin" component={AdminView} />
+            <Route path="/admin" component={AdminLogin} />
             <Route path="/about" component={About} />
             <Route path="/suggest" component={SuggestUser} />
+            <Route path="/signup" component={Signup} />
             <Route
               path="/"
               render={props => <Navigation
                 categoryList={this.state.categoryList}
-                {...props} />} />
+                {...props} />}/>
             <Route
               path="/category/:category"
               render={props => <Category categoryList={this.state.categoryList} {...props} />} />
